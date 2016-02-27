@@ -19,6 +19,17 @@
   {$\mu_0$}
   {\num{1.257e-8}}
   {\si{\henry/\cm}}
+\constant{boltzmannJ}
+  {Boltzmann's Constant}
+  {$k$}
+  {\num{1.38e-23}}
+  {\si{\J/\K}}
+\constant{boltzmanneV}
+  {Boltzmann's Constant}
+  {$k$}
+  {\num{8.62e-5}}
+  {\si{\eV/\K}}
+
 
 \newcommand\consttableline[1]{\constsymb{#1}&\constname{#1}&\constvalue{#1}&\constunits{#1}\\}
 
@@ -33,6 +44,8 @@
     \toprule
     \consttableline{epsilon0}
     \consttableline{mu0}
+    \consttableline{boltzmannJ}
+    \consttableline{boltzmanneV}
     \bottomrule
   \end{tabularx}
 \end{center}
@@ -40,18 +53,57 @@
 \subsection{Material}
 
 \begin{center}
-  \begin{tabularx}{\linewidth}{XXX}
+  \newcolumntype{C}{>{\centering\arraybackslash}X}
+  \begin{tabularx}{\linewidth}{llCCC}
     \toprule
-                  & Si      & GaAs\\
+                  &                 & Si              & GaAs            & Ge\\
     \midrule
-    $\epsilon_r$  & \\
-    $E_g$         & \\
-    $\chi$        & \\
+    $\epsilon_r$  &                 & 11.7            & 13.1            & 16.0\\
+    $E_g$         & \si{eV}         & 1.12            & 1.42            & 0.66\\
+    $\chi$        & \si{V}          & 4.01            & 4.07            & 4.13\\
+    $N_c$         & \si{\cm^{-3}}   & \num{2.8e19}    & \num{4.7e17}    & \num{1.04e19}\\
+    $N_v$         & \si{\cm^{-3}}   & \num{1.04e19}   & \num{7.0e18}    & \num{6.0e18}\\
+    $n_i$         & \si{\cm^{-3}}   & \num{1.5e10}    & \num{1.8e6}     & \num{2.4e13}\\
     \bottomrule
   \end{tabularx}
 \end{center}
 
-\section{Waste of Space}
-\lipsum
+\section{Equations}
+
+\lipsum[1]
+
+\subsection{Carrier Concentration and Fermi Level}\
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    n_0 = n_i\exp\left[\frac{E_F-E_i}{kT}\right]
+  \end{displaymath}
+  
+  \begin{displaymath}
+    p_0 = n_i\exp\left[\frac{-(E_F-E_i)}{kT}\right]
+  \end{displaymath}
+\end{multicols}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    n_0 = N_c\exp\left[\frac{-(E_c-E_F)}{kT}\right]
+  \end{displaymath}
+  
+  \begin{displaymath}
+    p_0 = N_v\exp\left[\frac{-(E_F-E_v)}{kT}\right]
+  \end{displaymath}
+\end{multicols}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    E_c-E_F = -kT\ln\frac{n_0}{N_C}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    E_F-E_v = -kT\ln\frac{p_0}{N_V}
+  \end{displaymath}
+\end{multicols}
+
+\lipsum[1-3]
 
 \end{document}
