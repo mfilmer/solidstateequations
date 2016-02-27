@@ -1,30 +1,57 @@
 \documentclass{infosheet}
 
+\usepackage{siunitx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+
 \usepackage{lipsum}
 
-\title{Test Title}
+\title{Solid State Equations}
 \author{Matthew Filmer}
 
-\constant{consti}{My Constant}{5}
+\constant{epsilon0}
+  {Permittivity of Free Space}
+  {$\epsilon_0$}
+  {\num{8.854e-14}}
+  {\si{\F/\cm}}
+\constant{mu0}
+  {Permeability of Free Space}
+  {$\mu_0$}
+  {\num{1.257e-8}}
+  {\si{\henry/\cm}}
+
+\newcommand\consttableline[1]{\constsymb{#1}&\constname{#1}&\constvalue{#1}&\constunits{#1}\\}
 
 \begin{document}
 \maketitle
 
-\section{Section 1}
+\section{Constants}
+\subsection{Physical}
 
-name test: \constname{consti}
+\begin{center}
+  \begin{tabularx}{\linewidth}{lXrl}
+    \toprule
+    \consttableline{epsilon0}
+    \consttableline{mu0}
+    \bottomrule
+  \end{tabularx}
+\end{center}
 
-value test: \constvalue{consti}
+\subsection{Material}
 
-\lipsum[1]
-\subsection{xCode}
-Subsetction text
+\begin{center}
+  \begin{tabularx}{\linewidth}{XXX}
+    \toprule
+                  & Si      & GaAs\\
+    \midrule
+    $\epsilon_r$  & \\
+    $E_g$         & \\
+    $\chi$        & \\
+    \bottomrule
+  \end{tabularx}
+\end{center}
 
-\section{Section 2}
-Text 2
+\section{Waste of Space}
 \lipsum
-
-\section{Section 3}
-Etc.
 
 \end{document}

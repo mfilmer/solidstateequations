@@ -51,12 +51,17 @@
 
 \newcommand\@labelheader{infosheet}
 
-\newcommand\constant[3]{%
+% \constant{name}{symbol}{value}{units}
+\newcommand\constant[5]{%
   \expandafter\def\csname\@labelheader-constname-#1\endcsname{#2}%
-  \expandafter\def\csname\@labelheader-constvalue-#1\endcsname{#3}%
+  \expandafter\def\csname\@labelheader-constsymb-#1\endcsname{#3}%
+  \expandafter\def\csname\@labelheader-constvalue-#1\endcsname{#4}%
+  \expandafter\def\csname\@labelheader-constunits-#1\endcsname{#5}%
 }
 \newcommand\constname[1]{\csname\@labelheader-constname-#1\endcsname}
+\newcommand\constsymb[1]{\csname\@labelheader-constsymb-#1\endcsname}
 \newcommand\constvalue[1]{\csname\@labelheader-constvalue-#1\endcsname}
+\newcommand\constunits[1]{\csname\@labelheader-constunits-#1\endcsname}
 
 \newcommand\formula[3]{%
   \expandafter\def\csname\@labelheader-formulaname-#1\endformulaname{#2}%
