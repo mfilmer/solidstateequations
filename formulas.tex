@@ -43,22 +43,22 @@
     {Planck Constant}
     {$h$}
     {\num{6.626e-34}}
-    {\si{\J/\s}}
+    {\si{\J\s}}
 \constant{planckeV}
   {Planck Constant}
   {$h$}
   {\num{4.136e-15}}
-  {\si{\eV/\s}}
+  {\si{\eV\s}}
 \constant{hbarJ}
   {Reduced Planck Constant}
   {$\hbar$}
   {\num{1.055e-34}}
-  {\si{\J/\s}}
+  {\si{\J\s}}
 \constant{hbareV}
   {Reduced Planck Constant}
   {$\hbar$}
   {\num{6.582e-16}}
-  {\si{\eV/\s}}
+  {\si{\eV\s}}
 
 
 \newcommand\consttableline[1]{\constsymb{#1}&\constname{#1}&\constvalue{#1}&\constunits{#1}\\}
@@ -148,11 +148,11 @@
 
 \begin{multicols}{2}
   \begin{displaymath}
-    E_c-E_F = -kT\ln\frac{n_0}{N_c}
+    E_c-E_F = -kT\ln\frac{N_D}{N_c}
   \end{displaymath}
   
   \begin{displaymath}
-    E_F-E_v = -kT\ln\frac{p_0}{N_v}
+    E_F-E_v = -kT\ln\frac{N_A}{N_v}
   \end{displaymath}
 \end{multicols}
 
@@ -239,7 +239,7 @@
 \subsection{Schottky Junction}
 
 \begin{displaymath}
-  V_{bi} = \phi_m - \chi - kT\ln(N_c/N_d)
+  V_{bi} = \phi_m - \chi - \underbrace{kT\ln(N_c/N_d)}_{\phi_n}
 \end{displaymath}
 
 \begin{displaymath}
