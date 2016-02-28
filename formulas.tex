@@ -17,7 +17,7 @@
 \constant{emass}
   {Electron Mass}
   {$m_0$}
-  {\num{9.11e-19}}
+  {\num{9.11e-31}}
   {\si{\kg}}
 \constant{epsilon0}
   {Permittivity of Free Space}
@@ -109,11 +109,15 @@
 \subsection{Carrier Concentration and Fermi Level}
 
 \begin{displaymath}
-  n_0 = \frac{N_D-N_A}{2} + \left[\frac{N_D-N_A}{2}+n_i^2\right]^{1/2}
+  n_0 = \frac{N_D-N_A}{2} + \left[\left(\frac{N_D-N_A}{2}\right)^2+n_i^2\right]^{1/2}
 \end{displaymath}
 
 \begin{displaymath}
-  p_0 = \frac{N_A-N_D}{2} + \left[\frac{N_A-N_D}{2}+n_i^2\right]^{1/2}
+  p_0 = \frac{N_A-N_D}{2} + \left[\left(\frac{N_A-N_D}{2}\right)^2+n_i^2\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  n_i^2 = N_cN_v\exp\left[\frac{-E_g}{kT}\right]
 \end{displaymath}
 
 \begin{multicols}{2}
@@ -255,7 +259,7 @@
 \end{displaymath}
 
 \begin{displaymath}
-  J_0 = \left(\frac{qD_np_{n0}}{L_p}+\frac{qD_nn_{p0}}{L_n}\right)
+  J_0 = \left(\frac{qD_pp_{n0}}{L_p}+\frac{qD_nn_{p0}}{L_n}\right)
 \end{displaymath}
 
 \begin{displaymath}
@@ -267,7 +271,7 @@
 \end{displaymath}
 
 \begin{displaymath}
-  C'_{sc} =
+  C'_{sc} = \frac{q^2}{2kT}(L_pp_{n0} + L_nn_{p0})\exp\left(\frac{qV_a}{kT}\right)
 \end{displaymath}
 
 \subsection{Schottky Junction}
@@ -281,10 +285,36 @@
 \end{displaymath}
 
 \begin{displaymath}
-  a
+  A^* = \frac{4\pi qm^*_nk^2}{h^3}
+\end{displaymath}
+
+\begin{displaymath}
+  J_{sT} = A^*T^2\exp\left(\frac{-q\phi_{Bn}}{kT}\right)
+\end{displaymath}
+
+\begin{displaymath}
+  J = J_{sT}\left[\exp\left(\frac{qV_a}{kT}\right) - 1\right]
 \end{displaymath}
 
 \subsection{MOS Capacitors}
+
+\begin{displaymath}
+  \phi_F = E_F - E_i
+\end{displaymath}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    \phi_{Fp} = \frac{-kT}{q}\ln\left(\frac{N_A}{n_i}\right)
+  \end{displaymath}
+  
+  \begin{displaymath}
+    \phi_{Fn} = \frac{kT}{q}\ln\left(\frac{N_D}{n_i}\right)
+  \end{displaymath}
+\end{multicols}
+
+\begin{displaymath}
+  x_d = \left(\frac{2\epsilon_s\phi_s}{qN_A}\right)^{1/2} = \left(\frac{-2\epsilon_s\phi_s}{qN_D}\right)^{1/2}
+\end{displaymath}
 
 \lipsum[1-4]
 
