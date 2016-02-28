@@ -14,6 +14,11 @@
   {$q$}
   {\num{1.602e-19}}
   {\si{\coulomb}}
+\constant{emass}
+  {Electron Mass}
+  {$m_0$}
+  {\num{9.11e-19}}
+  {\si{\kg}}
 \constant{epsilon0}
   {Permittivity of Free Space}
   {$\epsilon_0$}
@@ -56,7 +61,6 @@
   {\si{\eV/\s}}
 
 
-
 \newcommand\consttableline[1]{\constsymb{#1}&\constname{#1}&\constvalue{#1}&\constunits{#1}\\}
 
 \begin{document}
@@ -69,6 +73,7 @@
   \begin{tabularx}{\linewidth}{lXrl}
     \toprule
     \consttableline{echarge}
+    \consttableline{emass}
     \consttableline{epsilon0}
     \consttableline{mu0}
     \consttableline{boltzmannJ}
@@ -151,6 +156,20 @@
   \end{displaymath}
 \end{multicols}
 
+\begin{displaymath}
+  R-G_t = \frac{np-n_i^2}{\tau_n(n+n_t) + \tau_p(p+p_t)}
+\end{displaymath}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    n_t = n_i\exp\left(\frac{E_t-E_i}{kT}\right)
+  \end{displaymath}
+  
+  \begin{displaymath}
+    p_t = n_i\exp\left(\frac{E_i-E_t}{kT}\right)
+  \end{displaymath}
+\end{multicols}
+
 \subsection{Carrier Transport}
 
 \begin{displaymath}
@@ -176,8 +195,58 @@
 \end{multicols}
 
 \begin{displaymath}
-  J_\text{drift} = q(\mu_nn + \mu_pp)\mathcal{E}
+  J_\text{drift} = q(\mu_nn + \mu_pp)\mathcal{E} = \sigma\mathcal{E}
 \end{displaymath}
+
+\begin{displaymath}
+  \frac{1}{2}m^*v_{sat}^2 = \frac{3}{2}kT
+\end{displaymath}
+
+\begin{displaymath}
+  J_\text{diff} = -q\left(D_p\frac{dp}{dx} - D_n\frac{dn}{dx}\right) = -kT\left(\mu_p\frac{dp}{dx} - \mu_n\frac{dn}{dx}\right)
+\end{displaymath}
+
+\subsection{p-n Junctions}
+
+\begin{displaymath}
+  V_{bi} = |\phi_{Fp}| + |\phi_{Fn}| = \frac{kT}{q}\ln\left(\frac{N_AN_D}{n_i^2}\right)
+\end{displaymath}
+
+\begin{displaymath}
+  W = \left[\frac{2\epsilon_s(V_{bi}-V_a)}{q}\left(\frac{N_A + N_D}{N_AN_D}\right)\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  x_p = \left[\frac{2\epsilon_s(V_{bi}-V_a)}{q}\left(\frac{N_D}{N_A}\right)\frac{1}{N_A+N_D}\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  x_n = \left[\frac{2\epsilon_s(V_{bi}-V_a)}{q}\left(\frac{N_A}{N_D}\right)\frac{1}{N_A+N_D}\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  \mathcal{E}_{max} = \frac{-qN_Dx_n}{\epsilon_s} = \frac{-qN_Ax_p}{\epsilon_s}
+\end{displaymath}
+
+\begin{displaymath}
+  \mathcal{E}_{max} = \frac{-2(V_{bi} - V_a)}{W}
+\end{displaymath}
+
+\begin{displaymath}
+  np=n_i^2\exp\left(\frac{qV_a}{kT}\right)
+\end{displaymath}
+
+\subsection{Schottky Junction}
+
+\begin{displaymath}
+  V_{bi} = \phi_m - \chi - kT\ln(N_c/N_d)
+\end{displaymath}
+
+\begin{displaymath}
+  x_n = \left[\frac{2\epsilon_s(V_{bi} - V_a)}{qN_D}\right]^{1/2}
+\end{displaymath}
+
+\subsection{MOS Capacitors}
 
 \lipsum[1-4]
 
