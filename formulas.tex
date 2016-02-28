@@ -9,6 +9,11 @@
 \title{Solid State Equations}
 \author{Author}
 
+\constant{echarge}
+  {Elementary Charge}
+  {$q$}
+  {\num{1.602e-19}}
+  {\si{\coulomb}}
 \constant{epsilon0}
   {Permittivity of Free Space}
   {$\epsilon_0$}
@@ -29,6 +34,27 @@
   {$k$}
   {\num{8.62e-5}}
   {\si{\eV/\K}}
+\constant{planckJ}
+    {Planck Constant}
+    {$h$}
+    {\num{6.626e-34}}
+    {\si{\J/\s}}
+\constant{planckeV}
+  {Planck Constant}
+  {$h$}
+  {\num{4.136e-15}}
+  {\si{\eV/\s}}
+\constant{hbarJ}
+  {Reduced Planck Constant}
+  {$\hbar$}
+  {\num{1.055e-34}}
+  {\si{\J/\s}}
+\constant{hbareV}
+  {Reduced Planck Constant}
+  {$\hbar$}
+  {\num{6.582e-16}}
+  {\si{\eV/\s}}
+
 
 
 \newcommand\consttableline[1]{\constsymb{#1}&\constname{#1}&\constvalue{#1}&\constunits{#1}\\}
@@ -42,10 +68,15 @@
 \begin{center}
   \begin{tabularx}{\linewidth}{lXrl}
     \toprule
+    \consttableline{echarge}
     \consttableline{epsilon0}
     \consttableline{mu0}
     \consttableline{boltzmannJ}
     \consttableline{boltzmanneV}
+    \consttableline{planckJ}
+    \consttableline{planckeV}
+    \consttableline{hbarJ}
+    \consttableline{hbareV}
     \bottomrule
   \end{tabularx}
 \end{center}
@@ -70,9 +101,25 @@
 
 \section{Equations}
 
-\lipsum[1]
+\subsection{Carrier Concentration and Fermi Level}
 
-\subsection{Carrier Concentration and Fermi Level}\
+\begin{displaymath}
+  n_0 = \frac{N_D-N_A}{2} + \left[\frac{N_D-N_A}{2}+n_i^2\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  p_0 = \frac{N_A-N_D}{2} + \left[\frac{N_A-N_D}{2}+n_i^2\right]^{1/2}
+\end{displaymath}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    N_c = 2\left[\frac{m_n^*kT}{2\pi\hbar^2}\right]^{3/2}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    N_v = 2\left[\frac{m_p^*kT}{2\pi\hbar^2}\right]^{3/2}
+  \end{displaymath}
+\end{multicols}
 
 \begin{multicols}{2}
   \begin{displaymath}
@@ -80,7 +127,7 @@
   \end{displaymath}
   
   \begin{displaymath}
-    p_0 = n_i\exp\left[\frac{-(E_F-E_i)}{kT}\right]
+    p_0 = n_i\exp\left[\frac{E_i-E_F}{kT}\right]
   \end{displaymath}
 \end{multicols}
 
@@ -96,14 +143,42 @@
 
 \begin{multicols}{2}
   \begin{displaymath}
-    E_c-E_F = -kT\ln\frac{n_0}{N_C}
+    E_c-E_F = -kT\ln\frac{n_0}{N_c}
   \end{displaymath}
   
   \begin{displaymath}
-    E_F-E_v = -kT\ln\frac{p_0}{N_V}
+    E_F-E_v = -kT\ln\frac{p_0}{N_v}
   \end{displaymath}
 \end{multicols}
 
-\lipsum[1-3]
+\subsection{Carrier Transport}
+
+\begin{displaymath}
+  J_\text{drift} = \rho_p v_{dp} - \rho_n v_{dn}
+\end{displaymath}
+
+\begin{multicols}{2}
+  \begin{displaymath}
+    v_{dp} = \mu_p\mathcal{E}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    \rho_p = qp
+  \end{displaymath}
+
+  \begin{displaymath}
+    v_{dn} = -\mu_n\mathcal{E}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    \rho_n = -qn
+  \end{displaymath}
+\end{multicols}
+
+\begin{displaymath}
+  J_\text{drift} = q(\mu_nn + \mu_pp)\mathcal{E}
+\end{displaymath}
+
+\lipsum[1-4]
 
 \end{document}
