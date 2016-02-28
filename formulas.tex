@@ -170,6 +170,20 @@
   \end{displaymath}
 \end{multicols}
 
+\begin{multicols}{3}
+  \begin{displaymath}
+    L_p = \sqrt{D_p\tau_p}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    L_n = \sqrt{D_n\tau_n}
+  \end{displaymath}
+  
+  \begin{displaymath}
+    L_D = \sqrt{\frac{\epsilon_skT}{q^2N}}
+  \end{displaymath}
+\end{multicols}
+
 \subsection{Carrier Transport}
 
 \begin{displaymath}
@@ -236,14 +250,38 @@
   np=n_i^2\exp\left(\frac{qV_a}{kT}\right)
 \end{displaymath}
 
+\begin{displaymath}
+  \delta p_n(x) = p_n(x) - p_{n0} = p_{n0}\left[\exp\left(\frac{qV_a}{kT}\right)-1\right]\exp\left(\frac{x_n-x}{L_p}\right)
+\end{displaymath}
+
+\begin{displaymath}
+  J_0 = \left(\frac{qD_np_{n0}}{L_p}+\frac{qD_nn_{p0}}{L_n}\right)
+\end{displaymath}
+
+\begin{displaymath}
+  J = J_0\left[\exp\left(\frac{qV_a}{kT}\right)-1\right]
+\end{displaymath}
+
+\begin{displaymath}
+  C'_{ox} = \frac{\epsilon_{ox}}{t_{ox}}
+\end{displaymath}
+
+\begin{displaymath}
+  C'_{sc} =
+\end{displaymath}
+
 \subsection{Schottky Junction}
 
 \begin{displaymath}
-  V_{bi} = \phi_m - \chi - \underbrace{kT\ln(N_c/N_d)}_{\phi_n}
+  V_{bi} = \underbrace{\phi_m - \chi}_{\phi_{Bn}} - \underbrace{kT\ln(N_c/N_d)}_{\phi_n}
 \end{displaymath}
 
 \begin{displaymath}
   x_n = \left[\frac{2\epsilon_s(V_{bi} - V_a)}{qN_D}\right]^{1/2}
+\end{displaymath}
+
+\begin{displaymath}
+  a
 \end{displaymath}
 
 \subsection{MOS Capacitors}
